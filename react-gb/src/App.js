@@ -3,7 +3,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import './App.css';
 import Message from './message.js';
-import ChatMenu from './ChatsMenu.js';
+
 
 
 const AUTHORS ={
@@ -43,9 +43,6 @@ function App() {
   
   return (
     <div className="App App-header">
-      <div>
-      <ChatMenu/>
-      </div>
       <div>
       {messageList.map((message,index) => (
         <Message key={index} text = {message.text} author={message.author}
