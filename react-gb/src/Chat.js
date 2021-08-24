@@ -1,10 +1,11 @@
 import React from 'react';
+import ListItem from '@material-ui/core/ListItem';
 
 function Chat (props){
     return (
-        <div className = "chat">
+        <ListItem >
             <h3 className = "chatAuthor">{props.chatAuthor} </h3>
-            </div>
+            </ListItem>
         
     )
         

@@ -46,7 +46,7 @@ function App() {
       <div>
       <ChatMenu/>
       </div>
-      
+      <div>
       {messageList.map((message,index) => (
         <Message key={index} text = {message.text} author={message.author}
         />
@@ -66,6 +66,9 @@ function App() {
         
 
       </form>
+
+      </div>
+      
     </div>
   );
 }

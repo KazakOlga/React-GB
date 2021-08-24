@@ -1,28 +1,33 @@
 import React from 'react';
 import Chat from './Chat.js';
+import List from '@material-ui/core/List';
 
 
 
 function ChatMenu(){
-    const [chatList,setChatList] =React.useState('');
+    const [chatList,setChatList] =React.useState([]);
 
-    setChatList((currentChatList)=>[...currentChatList,
-        {author:'Alice', id:'lfvkn'},
-        {author:'Bread', id:'lfxkn'},
-        {author:'Liam', id:'lfbbkn'},
-          ]);
+    React.useEffect(()=>{
+        setChatList((currentChatList)=>[...currentChatList,
+            {id:'lfvkn',author:'Alice'},
+            {id:'lfkn',author:'Polin'},
+            {id:'lvkn',author:'Blake'},
+            {id:'fvkn',author:'Max'},
+            {id:'lfvfkn',author:'Alex'},
+              ]);
+              
+      }, [])
+    
 
     
 
 return(
-    <div className="chat_list">
-        {chatList.map((author,id)=>
-        <Chat key = {id} chatAuthor = {chatList.author}/>
-        )}
-       
+    <List >
         
-      
-    </div>
+        {chatList.map((chat,id)=>
+        <Chat key = {id} chatAuthor = {chat.author}/>
+        )}
+    </List>
 )
     
 }
