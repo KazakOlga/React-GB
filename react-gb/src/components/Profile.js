@@ -1,14 +1,13 @@
 import React from 'react';
-import useCallback from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {buttonCheck} from '../state/actions/profile';
 
 function Profile(){
     const dispatch = useDispatch();
     const {showName,name,age} = useSelector(state => state.profile)
-    const setShowName = useCallback(() => {
-        dispatch(buttonCheck);
-      }, [dispatch]);
+    const setButtonCheck = () => {
+        dispatch(buttonCheck());
+      }
     
 return(
     <div>
@@ -16,10 +15,9 @@ return(
 <input
           type="checkbox"
           checked={showName}
-          value={showName}
-          onChange={setShowName}
+          onChange={setButtonCheck}
 />
-    {showName && <p>{name}</p>}
+    {showName && <div>{name}</div>}
     <p>{age}</p>
     </div>
     
