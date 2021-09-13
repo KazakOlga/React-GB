@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
-import App from './App';
-import ChatMenu from './ChatsMenu';
-import Profile from './Profile';
+import App from './components/App/App';
+import Chats from './components/Chats';
+import Profile from './components/Profile';
 
 function Router (){
 return(
@@ -11,13 +11,13 @@ return(
 <div className="bordered">
       <Link to="/Profile">Profile</Link>
       <Link to="/">Home</Link>
-      <Link to="/ChatsMenu">Chats</Link>
+      <Link to="/Chats">Chats</Link>
     </div>
     <Switch>
         <Route path="/" exact/>
         <Route path="/Profile" exact component = {Profile}/>
-        <Route path="/ChatsMenu" exact component = {ChatMenu}/>
-        <Route path="/ChatsMenu/:chatId" render ={()=>
+        <Route path="/Chats" exact component = {Chats}/>
+        <Route path="/Chats/:chatId" render ={()=>
         <App/>}/>
     </Switch>
     </div>
