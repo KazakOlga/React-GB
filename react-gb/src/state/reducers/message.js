@@ -1,5 +1,5 @@
 import { ADD_MESSAGE } from "../actions/message"
-import AUTHORS from "../../components/App/constants"
+// import AUTHORS from "../../components/App/constants"
 
 const initialState={}
 

@@ -1,9 +1,10 @@
-import { BUTTON_CHECK } from "../actions/profile";
+import { BUTTON_CHECK, CHANGE_IS_AUTH } from "../actions/profile";
 
 const initialState={
     showName: true,
     name: "Olga",
-    age: 27
+    age: 27,
+    isAuthed: false,
 }
 
 export default function profileReducer(state=initialState,action){
@@ -14,7 +15,14 @@ switch(action.type){
             showName : !state.showName
         }
     
+    case CHANGE_IS_AUTH: {
+            return {
+                ...state,
+                isAuthed: action.payload.isAuthed,
+            }
+        }
     default: 
     return state
 }
+
 }
