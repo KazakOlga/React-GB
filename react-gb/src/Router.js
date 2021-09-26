@@ -2,8 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router';
 import { Link } from 'react-router-dom';
 import App from './App';
-import ChatMenu from './ChatsMenu';
-import Profile from './Profile';
+import ChatMenu from './components/ChatsMenu';
+import Profile from './components/Profile';
 
 function Router (){
 return(
